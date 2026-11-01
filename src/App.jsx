@@ -22,7 +22,6 @@ export default function App() {
           {/* Default route di dalam AdminLayout */}
           {/* mapping path ke component page, gunakan autocompletion */}
           <Route index element={<AdminDashboard />} />
-          <Route path="about" element={<AboutPage />} />
           <Route path="add-product" element={<ProductForm />} />
           <Route path="edit-product/:id" element={<ProductEdit />} />
           <Route path="about" element={<AboutPage />} />

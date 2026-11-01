@@ -1,6 +1,6 @@
 import React, { createContext, useContext } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import apiClient from "./ApiClient";
+import apiClient from "./apiClient";
 // Buat konteks
 const ProductContext = createContext();
 export const ProductProvider = ({ children }) => {
