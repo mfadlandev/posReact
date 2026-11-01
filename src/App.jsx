@@ -2,11 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import KasirPages from "./pages/kasir/KasirPage";
 import AdminLayout from "./layouts/AdminLayout";
-import AdminDashboard from "./pages/admin/AdminDashboard";
-import AboutPage from "./pages/admin/AboutPage";
-import KategoriPage from "./pages/admin/KategoriPage";
-import ProdukPage from "./pages/admin/ProdukPage";
-import TransaksiPage from "./pages/admin/TransaksiPage";
+import AdminDashboard from "./pages/adminpages/AdminDashboard";
+import AboutPage from "./pages/adminpages/AboutPage";
+import KategoriPage from "./pages/adminpages/KategoriPage";
+import ProdukPage from "./pages/adminpages/ProdukPage";
+import TransaksiPage from "./pages/adminpages/TransaksiPage";
+import ProductForm from "./pages/adminpages/ProductForm";
+import ProductEdit from "./pages/adminpages/ProductEdit";
 
 export default function App() {
   return (
@@ -17,7 +19,12 @@ export default function App() {
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
+          {/* Default route di dalam AdminLayout */}
+          {/* mapping path ke component page, gunakan autocompletion */}
           <Route index element={<AdminDashboard />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="add-product" element={<ProductForm />} />
+          <Route path="edit-product/:id" element={<ProductEdit />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="Kategori" element={<KategoriPage />} />
           <Route path="Produk" element={<ProdukPage />} />
